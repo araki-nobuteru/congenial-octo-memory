@@ -8,6 +8,7 @@ node {
     }
     stage('Test'){
         echo "Running tests" 
+        echo "${PERSON}"
     }
     stage('Deploy') {
         echo "Publishing"
