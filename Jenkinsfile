@@ -4,6 +4,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo "Running build"
+                echo "${repo_name}
             }
         }
         stage('Test'){
