@@ -1,15 +1,17 @@
 node { 
     parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
+        string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
+    }
+    stage('Clone repo') {
+        git branch: "${branch_to_build}", credentialsId: '1b19d722-cb51-4b9f-b849-b9f1880fc9fd', url: "${repo_url}"
     }
     stage('Build') { 
-        checkout scm
         echo "Running build"
-        echo "${repo_name}"
+        bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Build /p:Configuration:Release;OutDir=C:\\custom_build_out'
     }
     stage('Test'){
-        echo "Running tests" 
-        echo "${PERSON}"
+        echo "Running tests"
     }
     stage('Deploy') {
         echo "Publishing"
