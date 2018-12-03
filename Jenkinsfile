@@ -11,8 +11,9 @@ node {
         echo "Running build"
         bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Build /p:Configuration=Release;OutDir=C:\\custom_build_out'
     }
-    stage('Test'){
-        echo "Running tests"
+    stage('Packaging'){
+        echo "Running packaging tool"
+        bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"Compress-Archive C:\custom_build_out\_PublishedWebsites C:\custom_build_out\pack.zip \""
     }
     stage('Deploy') {
         echo "Publishing"
