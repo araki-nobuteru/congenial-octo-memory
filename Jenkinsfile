@@ -3,6 +3,7 @@ node {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
     stage('Build') { 
+        checkout scm
         echo "Running build"
         echo "${repo_name}"
     }
