@@ -4,6 +4,7 @@ node {
         string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
     }
     stage('Clone repo') {
+        bat "git config core.longpaths true"
         git branch: "${branch_to_build}", credentialsId: '1b19d722-cb51-4b9f-b849-b9f1880fc9fd', url: "${repo_url}"
     }
     stage('Build') { 
