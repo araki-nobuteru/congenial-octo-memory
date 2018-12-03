@@ -13,7 +13,7 @@ node {
     }
     stage('Packaging'){
         echo "Running packaging tool"
-        bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"Compress-Archive C:\custom_build_out\_PublishedWebsites C:\custom_build_out\pack.zip \""
+        bat "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"Compress-Archive C:\\custom_build_out\\_PublishedWebsites C:\\custom_build_out\\pack.zip \""
     }
     stage('Deploy') {
         echo "Publishing"
