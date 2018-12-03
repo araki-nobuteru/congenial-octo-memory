@@ -9,7 +9,7 @@ node {
     }
     stage('Build') { 
         echo "Running build"
-        bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Build /p:Configuration:Release;OutDir=C:\\custom_build_out'
+        bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Build /p:Configuration=Release;OutDir=C:\\custom_build_out'
     }
     stage('Test'){
         echo "Running tests"
