@@ -9,7 +9,9 @@ node {
     }
     stage('Build') { 
         echo "Running build"
-        bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Build /p:Configuration=Release;OutDir=C:\\custom_build_out'
+        bat 'SonarQube.Scanner.MSBuild.exe begin /k:"icare_teste1" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="1c4fe35571a9acb83c8d0a5a8addf9a2ac6c8d5c"'
+        bat 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /t:Rebuild /p:Configuration=Release;OutDir=C:\\custom_build_out'
+        bat 'SonarQube.Scanner.MSBuild.exe end /d:sonar.login="1c4fe35571a9acb83c8d0a5a8addf9a2ac6c8d5c"'
     }
     stage('Packaging'){
         echo "Running packaging tool"
