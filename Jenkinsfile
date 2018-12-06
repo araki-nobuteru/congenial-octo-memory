@@ -5,7 +5,7 @@ node {
     }
     stage('Clone repo') {
         bat "git config core.longpaths true"
-        git branch: "${branch_to_build}", credentialsId: "${branch_to_build}", url: "${repo_url}"
+        git branch: "${branch_to_build}", credentialsId: "${credentials_to_use}", url: "${repo_url}"
     }
     stage('Build') { 
         echo "Running build"
