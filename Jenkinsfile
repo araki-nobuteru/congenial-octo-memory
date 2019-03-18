@@ -1,4 +1,4 @@
-@Library("Lib00Test")
+@Library("Lib00")
 import org.foo.Lib00
 
 node { 
