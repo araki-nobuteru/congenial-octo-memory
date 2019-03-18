@@ -4,7 +4,7 @@ node {
         string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
     }
     stage('Clone repo') {
-        baz("asdf")
+        foo("asdf")
     }    
     stage('Deploy') {
         echo "Publishing"
