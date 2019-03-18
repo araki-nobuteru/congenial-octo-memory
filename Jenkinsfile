@@ -1,5 +1,3 @@
-@Library("Lib00") _
-
 node { 
     parameters {
         string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
