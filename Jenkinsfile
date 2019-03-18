@@ -3,13 +3,15 @@ node {
         string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
         string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
     }
-    stage('Clone repo') {
-        steps {
-            sh "ls -l"
-            foo("asdf")
+    stages {
+        stage('Clone repo') {
+            steps {
+                sh "ls -l"
+                foo("asdf")
+            }
+        }    
+        stage('Deploy') {
+            echo "Publishing"
         }
-    }    
-    stage('Deploy') {
-        echo "Publishing"
     }
 }
