@@ -9,7 +9,7 @@ node {
         sh "ls -l"
     }
     stage('Clone repo') {
-        foo("asdf")
+        baz("asdf")
     }    
     stage('Deploy') {
         echo "Publishing"
