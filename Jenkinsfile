@@ -1,5 +1,4 @@
-@Library("Lib00")
-import org.foo.Lib00
+@Library("Lib00") _
 
 node { 
     parameters {
@@ -7,7 +6,7 @@ node {
         string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
     }
     stage('Clone repo') {
-        Lib00Test.foobar("asdf")
+        baz("asdf")
     }    
     stage('Deploy') {
         echo "Publishing"
