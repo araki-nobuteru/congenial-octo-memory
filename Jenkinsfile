@@ -1,8 +1,8 @@
 //@Library('Lib00Test') _
 
 node {
-    def rootDir = pwd()
-    def t = load "${rootDir}@script/baz.groovy"
+    def s = checkout scm
+    def t = load "baz.groovy"
     
     parameters {
         string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
