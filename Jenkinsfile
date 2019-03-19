@@ -1,6 +1,8 @@
 //@Library('Lib00Test') _
 
-node { 
+node {
+    def t = load "baz.groovy"
+    
     parameters {
         string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
         string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
@@ -9,7 +11,7 @@ node {
         sh "ls -l"
     }
     stage('Clone repo') {
-        baz("asdf")
+        t.call("asdf")
     }    
     stage('Deploy') {
         echo "Publishing"
