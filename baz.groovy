@@ -1,4 +1,4 @@
-def call("p") {
+def greetings("p") {
     echo "greetings from baz.groovy"
 }
 
