@@ -1,4 +1,4 @@
-def greetings("p") {
+def greetings(p) {
     echo "greetings from baz.groovy"
 }
 
