@@ -12,7 +12,7 @@ node {
         sh "ls -l"
     }
     stage('Clone repo') {
-        t.call("asdf")
+        t.greetings("asdf")
     }    
     stage('Deploy') {
         echo "Publishing"
