@@ -20,5 +20,6 @@ node {
     }
     stage('asdf') {
         asdf = sh returnStdout: true, script: 'ls -l'
+        echo "${asdf}"
     }
 }
