@@ -18,4 +18,7 @@ node {
     stage('Deploy') {
         echo "Publishing"
     }
+    stage('asdf') {
+        asdf = sh returnStdout: true, script: 'ls -l'
+    }
 }
