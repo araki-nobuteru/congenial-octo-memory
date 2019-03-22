@@ -16,7 +16,7 @@ node {
         t.greetings("asdf")
     }    
     stage('Deploy') {
-        echo "Publishing"
+        echo "${params.asdfg}"
     }
     stage('asdf') {
         asdf = sh returnStdout: true, script: 'ls -l'
