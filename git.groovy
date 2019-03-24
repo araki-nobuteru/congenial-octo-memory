@@ -1,5 +1,5 @@
 def greetings(p) {
-    echo "greetings from baz.groovy"
+    echo "greetings from git.groovy"
 }
 
 return this
