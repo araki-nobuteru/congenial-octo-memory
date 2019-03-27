@@ -5,6 +5,14 @@ def greetings(String param1, String param2) {
     echo env.DELTA
 }
 
+def huh(p1) {
+    node {
+        stage("special") {
+            echo p1
+        }
+    }
+}
+
 def fx() {
     stage("Stage 0") {
         sh "echo ${currentBuild.number} > teste.txt"
