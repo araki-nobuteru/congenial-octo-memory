@@ -44,8 +44,8 @@ pipeline {
         stage('asdf') {
             steps {
                 script {
-                    //asdf = sh returnStdout: true, script: 'ls -l'
-                    echo "asdf"
+                    asdf = sh returnStdout: true, script: 'ls -l'
+                    echo "${asdf}"
                 }
             }
         }
