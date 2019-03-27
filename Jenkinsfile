@@ -17,6 +17,8 @@ pipeline {
         stage("Stage 1") {
             steps {
                 script {
+                    echo "Current build number:"
+                    echo "${currentBuild.number}"
                     a.testFunc("a")
                 }
             }
@@ -40,7 +42,7 @@ pipeline {
             steps {
                 script {
                     asdf = sh returnStdout: true, script: 'pwd'
-                    echo "${asdf}"
+                    echo "${asdf}
                 }
             }
         }
