@@ -1,7 +1,6 @@
 def t
 def a
 
-pipeline {
     agent any
     dir ("${currentBuild.number}") {
     stages {
@@ -56,4 +55,3 @@ pipeline {
         }
     }
     }
-}
