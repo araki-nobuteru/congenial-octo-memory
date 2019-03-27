@@ -2,6 +2,7 @@ def t
 def a
 
 node {
+    ws("asdfx") {
     checkout scm
 
     stage("Stage 0") {
@@ -31,5 +32,6 @@ node {
         echo "${asdf}"
 
         sh "cat teste.txt"
+    }
     }
 }
