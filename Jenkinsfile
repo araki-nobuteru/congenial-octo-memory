@@ -1,32 +1,38 @@
 def t
 def a
+
 node {
     dir ("${currentBuild.number}") {
         checkout scm
+        
         stage("Stage 0") {
-                t = load "git.groovy"
-                a = load "vars/foo.groovy"
+            t = load "git.groovy"
+            a = load "vars/foo.groovy"
+            
+            sh "echo ${currentBuild.number} > teste.txt"
+            sh "cat teste.txt"
         }
+        
         stage("Stage 1") {
-            script {
-                echo "Current build number:"
-                echo "${currentBuild.number}"
-                a.testFunc("a")
-            }
+            echo "Current build number:"
+            echo "${currentBuild.number}"
+            a.testFunc("a")
         }
+        
         stage('Clone repo') {
-            script {
-                t.greetings("asdf")
-            }
+            t.greetings("asdf")
         }    
+        
         stage('Deploy') {
             echo "${params.asdfg}"
         }
+        
         stage('asdf') {
-            script {
-                asdf = sh returnStdout: true, script: 'pwd'
-                echo "${asdf}"
-            }
+            asdf = sh returnStdout: true, script: 'pwd'
+            echo "${asdf}"
+            
+            sh "echo 999 > teste.txt"
+            sh "cat teste.txt"
         }
     }
 }
