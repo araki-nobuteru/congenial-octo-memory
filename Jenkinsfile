@@ -1,17 +1,16 @@
 def t
 def a
-
+node {
     dir ("${currentBuild.number}") {
-    stages {
         stage("Stage 0") {
             steps {
-                
+
                     script {
                         checkout scm
                         t = load "git.groovy"
                         a = load "vars/foo.groovy"
                     }
-                
+
             }
         }
         stage("Stage 1") {
@@ -25,7 +24,6 @@ def a
                 }
             }
         }
-
         stage('Clone repo') {
             steps {
                 dir ("foo") {
@@ -35,13 +33,11 @@ def a
                 }
             }
         }    
-
         stage('Deploy') {
             steps {
                 echo "${params.asdfg}"
             }
         }
-        
         stage('asdf') {
             steps {
                 dir ("foo") {
@@ -53,4 +49,4 @@ def a
             }
         }
     }
-    }
+}
