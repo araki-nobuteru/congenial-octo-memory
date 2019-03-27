@@ -6,10 +6,8 @@ def greetings(String param1, String param2) {
 }
 
 def huh(p1) {
-    node {
-        stage("special") {
-            echo p1
-        }
+    stage("special") {
+        echo p1
     }
 }
 
