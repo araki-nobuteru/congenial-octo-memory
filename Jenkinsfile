@@ -1,10 +1,11 @@
 def t = ""
 def a
 
-checkout scm
+
 
 
 node {
+    checkout scm
     a = load "git.groovy"
     a.huh(1)
 }
