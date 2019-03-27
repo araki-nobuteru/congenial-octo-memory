@@ -1,14 +1,18 @@
 def t = ""
 def a
-def wx = "foobaz"
+
+checkout scm
+a = load "git.groovy"
+
+a.huh(1)
 
 node {
     withEnv(['FOOBAR=foobarr!','QWERTY=asdsfq']) {
     //triggers { cron("@daily") }
     dir("zx") {
         def x
-        checkout scm
-        a = load "git.groovy"
+        
+        
 
         stage("huh!?") {
             a.greetings("asdf", "zxcv")
