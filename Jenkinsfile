@@ -2,8 +2,6 @@ def t
 def a
 
 node {
-    customWorkspace "asdfx"
-    
     checkout scm
 
     stage("Stage 0") {
