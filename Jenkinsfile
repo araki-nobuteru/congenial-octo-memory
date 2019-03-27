@@ -1,5 +1,6 @@
-def t
-def a
+checkout scm
+def t = load "git.groovy"
+def a = load "vars/foo.groovy"
 
 pipeline {
     agent any
@@ -12,9 +13,7 @@ pipeline {
     stages {
         stage("Stage 1") {
             steps {
-                checkout scm
-                t = load "git.groovy"
-                a = load "vars/foo.groovy"
+                
             }
         }
         
