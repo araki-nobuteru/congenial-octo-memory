@@ -7,9 +7,12 @@ node {
     checkout scm
     a = load "git.groovy"
     
+    stage("huh!?") {
+        a.greetings(param1: "asdf", param2: "zxcv")
+    }
+    
     if (params.customWS) {
         ws("asdfx") {
-            a.greetings(param1: "asdf", param2: "zxcv")
             a.fx()
         }
     } else {
