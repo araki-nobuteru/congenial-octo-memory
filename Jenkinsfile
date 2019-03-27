@@ -3,17 +3,17 @@ def a
 
 pipeline {
     agent any
-    
+    dir ("${currentBuild.number}") {
     stages {
         stage("Stage 0") {
             steps {
-                dir ("foo") {
+                
                     script {
                         checkout scm
                         t = load "git.groovy"
                         a = load "vars/foo.groovy"
                     }
-                }
+                
             }
         }
         stage("Stage 1") {
@@ -54,5 +54,6 @@ pipeline {
                 }
             }
         }
+    }
     }
 }
