@@ -4,19 +4,14 @@ def a
 pipeline {
     agent any
     
-    parameters {
-        string(name: 'repo_url', defaultValue: 'http://foo.bar/baz.git', description: 'Git repo URL')
-        string(name: 'branch_to_build', defaultValue: 'master', description: 'Repo branch to build from')
-    }
-    
     stages {
         stage("Stage 0") {
             steps {
-                //script {
+                script {
                     checkout scm
                     t = load "git.groovy"
                     a = load "vars/foo.groovy"
-                //}
+                }
             }
         }
         stage("Stage 1") {
