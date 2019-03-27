@@ -7,27 +7,33 @@ pipeline {
     stages {
         stage("Stage 0") {
             steps {
-                script {
-                    checkout scm
-                    t = load "git.groovy"
-                    a = load "vars/foo.groovy"
+                dir ("foo") {
+                    script {
+                        checkout scm
+                        t = load "git.groovy"
+                        a = load "vars/foo.groovy"
+                    }
                 }
             }
         }
         stage("Stage 1") {
             steps {
-                script {
-                    echo "Current build number:"
-                    echo "${currentBuild.number}"
-                    a.testFunc("a")
+                dir ("foo") {
+                    script {
+                        echo "Current build number:"
+                        echo "${currentBuild.number}"
+                        a.testFunc("a")
+                    }
                 }
             }
         }
 
         stage('Clone repo') {
             steps {
-                script {
-                    t.greetings("asdf")
+                dir ("foo") {
+                    script {
+                        t.greetings("asdf")
+                    }
                 }
             }
         }    
@@ -40,9 +46,11 @@ pipeline {
         
         stage('asdf') {
             steps {
-                script {
-                    asdf = sh returnStdout: true, script: 'pwd'
-                    echo "${asdf}"
+                dir ("foo") {
+                    script {
+                        asdf = sh returnStdout: true, script: 'pwd'
+                        echo "${asdf}"
+                    }
                 }
             }
         }
