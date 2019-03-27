@@ -1,7 +1,6 @@
 def t
 def a
 
-    agent any
     dir ("${currentBuild.number}") {
     stages {
         stage("Stage 0") {
