@@ -2,7 +2,7 @@ def t
 def a
 
 node {
-    dir ("${currentBuild.number}") {
+    //dir ("${currentBuild.number}") {
         checkout scm
         
         stage("Stage 0") {
@@ -31,8 +31,7 @@ node {
             asdf = sh returnStdout: true, script: 'pwd'
             echo "${asdf}"
             
-            sh "echo 999 > teste.txt"
             sh "cat teste.txt"
         }
-    }
+    //}
 }
