@@ -1,6 +1,6 @@
 def t = ""
 def a
-def ws_
+def wx = "foobaz"
 
 node {
     //triggers { cron("@daily") }
