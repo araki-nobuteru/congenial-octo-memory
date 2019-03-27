@@ -6,8 +6,10 @@ def greetings(String param1, String param2) {
 }
 
 def huh(p1) {
+    def xc = "999"
     stage("special") {
         echo p1
+        echo xc
     }
 }
 
