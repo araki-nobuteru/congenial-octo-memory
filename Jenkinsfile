@@ -3,6 +3,7 @@ def a
 def wx = "foobaz"
 
 node {
+    withEnv(['FOOBAR=foobarr!','QWERTY=asdsfq']) {
     //triggers { cron("@daily") }
     dir("zx") {
         def x
@@ -30,5 +31,6 @@ node {
         } else {
             a.fx()
         }
+    }
     }
 }
