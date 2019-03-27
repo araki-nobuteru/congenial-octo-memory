@@ -1,5 +1,5 @@
-def greetings(p) {
-    echo "greetings from git.groovy"
+def greetings(String param1, String param2) {
+    echo "greetings from git.groovy, ${param1} ${param2}"
 }
 
 def fx() {
