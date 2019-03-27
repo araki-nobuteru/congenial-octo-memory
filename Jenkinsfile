@@ -2,7 +2,7 @@
 
 node {
     checkout scm
-    def t = load "baz.groovy"
+    def t = load "git.groovy"
     def a = load "vars/foo.groovy"
     
     parameters {
