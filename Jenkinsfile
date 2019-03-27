@@ -7,7 +7,7 @@ node {
     checkout scm
     a = load "git.groovy"
     
-    stage("huh!?") {
+    stage {
         a.greetings("asdf", "zxcv")
         
         stage("qwerty") {
