@@ -4,7 +4,9 @@ def a
 checkout scm
 a = load "git.groovy"
 
-a.huh(1)
+node {
+    a.huh(1)
+}
 
 node {
     withEnv(['FOOBAR=foobarr!','QWERTY=asdsfq']) {
