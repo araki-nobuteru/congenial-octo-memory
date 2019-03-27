@@ -12,7 +12,11 @@ node {
             a.greetings("asdf", "zxcv")
 
             stage("qwerty") {
-                echo "asdfzxcxv ${t} asdf"
+                if (t != null) {
+                    echo "asdfzxcxv ${t} asdf"
+                } else {
+                    echo "asdfzxcxv asdf"
+                }
             }
         }
 
