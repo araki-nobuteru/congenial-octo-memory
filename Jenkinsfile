@@ -5,6 +5,7 @@ def ws_
 node {
     //triggers { cron("@daily") }
     dir("zx") {
+        def x
         checkout scm
         a = load "git.groovy"
 
@@ -14,7 +15,7 @@ node {
             stage("qwerty") {
                 if (t != null) {
                     x = 1
-                    echo "asdfzxcxv ${t} asdf"
+                    echo "asdfzxcxv ${t} asdf ${x}"
                 } else {
                     echo "asdfzxcxv2 asdf"
                 }
