@@ -1,5 +1,8 @@
 def greetings(String param1, String param2) {
     echo "greetings from git.groovy, ${param1} ${param2}"
+    echo env.FOOBAR
+    echo env.QWERTY
+    echo env.DELTA
 }
 
 def fx() {
