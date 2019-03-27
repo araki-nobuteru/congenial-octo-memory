@@ -12,11 +12,11 @@ pipeline {
     stages {
         stage("Stage 0") {
             steps {
-                script {
+                //script {
                     checkout scm
                     t = load "git.groovy"
                     a = load "vars/foo.groovy"
-                }
+                //}
             }
         }
         stage("Stage 1") {
