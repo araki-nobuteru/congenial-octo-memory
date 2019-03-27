@@ -12,7 +12,7 @@ node {
             a.greetings("asdf", "zxcv")
 
             stage("qwerty") {
-                echo "asdfzxcxv"
+                echo "asdfzxcxv ${t} asdf"
             }
         }
 
