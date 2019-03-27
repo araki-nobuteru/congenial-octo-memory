@@ -8,7 +8,7 @@ node {
     a = load "git.groovy"
     
     stage("huh!?") {
-        a.greetings(param1: "asdf", param2: "zxcv")
+        a.greetings("asdf", "zxcv")
     }
     
     if (params.customWS) {
