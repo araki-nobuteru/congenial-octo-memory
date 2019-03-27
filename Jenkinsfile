@@ -1,8 +1,15 @@
 def t
 def a
+def ws_
 
 node {
-    ws("asdfx") {
+    if (params.customWS) {
+        ws_ = "asdfx"
+    } else {
+        ws_ = %WORKSPACE%
+    }
+    
+    ws(ws_) {
         checkout scm
 
         stage("Stage 0") {
