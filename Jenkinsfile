@@ -11,6 +11,7 @@ node {
 }
 
 node {
+    sh "ls -l"
     withEnv(['FOOBAR=foobarr!','QWERTY=asdsfq']) {
     //triggers { cron("@daily") }
     dir("zx") {
