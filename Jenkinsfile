@@ -7,7 +7,7 @@ def a
 node {
     checkout scm
     a = load "git.groovy"
-    a.huh(1)
+    a.huh("1")
 }
 
 node {
