@@ -3,6 +3,7 @@ def a
 def ws_
 
 node {
+    triggers { cron("@daily") }
     checkout scm
     a = load "git.groovy"
     
