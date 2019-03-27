@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     asdf = sh returnStdout: true, script: 'pwd'
-                    echo "${asdf}
+                    echo "${asdf}"
                 }
             }
         }
