@@ -11,6 +11,7 @@ node {
 
         stage("huh!?") {
             a.greetings("asdf", "zxcv")
+            echo "${env.WORKSPACE}"
 
             stage("qwerty") {
                 if (t != null) {
