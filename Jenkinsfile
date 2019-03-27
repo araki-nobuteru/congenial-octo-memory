@@ -1,8 +1,9 @@
 def t
 def a
 
-node {
+
     ws("asdfx") {
+        node {
     checkout scm
 
     stage("Stage 0") {
