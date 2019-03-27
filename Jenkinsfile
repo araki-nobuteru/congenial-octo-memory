@@ -13,6 +13,7 @@ node {
 
             stage("qwerty") {
                 if (t != null) {
+                    x = 1
                     echo "asdfzxcxv ${t} asdf"
                 } else {
                     echo "asdfzxcxv2 asdf"
