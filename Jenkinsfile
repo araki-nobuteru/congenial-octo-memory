@@ -1,4 +1,4 @@
-def t
+def t = ""
 def a
 def ws_
 
