@@ -13,22 +13,31 @@ pipeline {
     stages {
         stage("Stage 1") {
             steps {
-                
+                script {
+                    a.testFunc("a")
+                }
+            }
+        }
+
+        stage('Clone repo') {
+            steps {
+                script {
+                    t.greetings("asdf")
+                }
+            }
+        }    
+
+        stage('Deploy') {
+            steps {
+                echo "${params.asdfg}"
             }
         }
         
-        stage('1') {
-            a.testFunc("a")
-        }
-        stage('Clone repo') {
-            t.greetings("asdf")
-        }    
-        stage('Deploy') {
-            echo "${params.asdfg}"
-        }
         stage('asdf') {
-            asdf = sh returnStdout: true, script: 'ls -l'
-            echo "${asdf}"
+            steps {
+                asdf = sh returnStdout: true, script: 'ls -l'
+                echo "${asdf}"
+            }
         }
     }
 }
