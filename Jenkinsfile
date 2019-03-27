@@ -1,8 +1,8 @@
 def t
 def a
 node {
-    checkout scm
     dir ("${currentBuild.number}") {
+        checkout scm
         stage("Stage 0") {
             script {
                 t = load "git.groovy"
