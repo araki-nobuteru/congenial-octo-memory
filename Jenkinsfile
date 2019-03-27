@@ -9,6 +9,10 @@ node {
     
     stage("huh!?") {
         a.greetings("asdf", "zxcv")
+        
+        stage("qwerty") {
+            echo "asdfzxcxv"
+        }
     }
     
     if (params.customWS) {
