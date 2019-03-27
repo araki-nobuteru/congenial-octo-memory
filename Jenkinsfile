@@ -6,7 +6,7 @@ node {
     if (params.customWS) {
         ws_ = "asdfx"
     } else {
-        ws_ = "${%WORKSPACE%}"
+        ws_ = env.WORKSPACE
     }
     
     ws(ws_) {
