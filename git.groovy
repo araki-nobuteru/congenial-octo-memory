@@ -11,6 +11,11 @@ def huh(p1) {
         echo p1
         echo xc
     }
+    this.huh2()
+}
+
+def huh2() {
+    echo "FOOOZ!"
 }
 
 def fx() {
