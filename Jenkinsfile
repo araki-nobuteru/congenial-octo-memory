@@ -26,8 +26,8 @@ node {
         def x
 
         stage("huh!?") {
-            input(message: "Should we go ahead?", ok: "Yup!", submitter:"araki", parameters: [choice(name:'foo', choices:"a\nb\nc")])
-            
+            i = input(message: "Should we go ahead?", ok: "Yup!", submitter:"araki", parameters: [choice(name:'foo', choices:"a\nb\nc")])
+            echo i
             a.greetings("asdf", "zxcv")
             echo env.WORKSPACE
 
