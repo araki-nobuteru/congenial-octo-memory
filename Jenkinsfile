@@ -9,8 +9,12 @@ node {
     a = load "git.groovy"
     a.huh("1")
     
-    cred = credentials("AnsiblePass")
-    echo cred
+    //cred = credentials("AnsiblePass")
+    //echo cred
+    
+    dir("./vars") {
+        sh "ls -l"
+    }
 }
 
 node {
@@ -19,8 +23,6 @@ node {
     //triggers { cron("@daily") }
     dir("zx") {
         def x
-        
-        
 
         stage("huh!?") {
             a.greetings("asdf", "zxcv")
