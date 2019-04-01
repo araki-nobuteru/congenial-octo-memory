@@ -14,7 +14,7 @@ node {
     
     dir("./vars") {
         sh "ls -l"
-        def l = "%WORKSPACE%"
+        def l = %WORKSPACE%
         echo l
     }
 }
