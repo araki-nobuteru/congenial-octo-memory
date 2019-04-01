@@ -10,6 +10,7 @@ def huh(p1) {
     stage("special") {
         echo p1
         echo xc
+        echo params.foobaz
     }
     this.huh2()
 }
