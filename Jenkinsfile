@@ -25,6 +25,7 @@ node {
     dir("zx") {
         def x
 
+        input message: "Should we go ahead?", ok: "Yup!", submitter:"foo"
         stage("huh!?") {
             a.greetings("asdf", "zxcv")
             echo env.WORKSPACE
