@@ -7,6 +7,7 @@ def a
 node {
     checkout scm
     a = load "git.groovy"
+    def variable1 = "abc123"
     a.huh("1")
     
     //cred = credentials("AnsiblePass")
