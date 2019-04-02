@@ -17,6 +17,7 @@ def huh(p1) {
 
 def huh2() {
     echo "FOOOZ!"
+    echo variable1
 }
 
 def fx() {
