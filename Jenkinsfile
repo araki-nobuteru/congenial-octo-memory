@@ -12,7 +12,7 @@ node {
     
     script {
         def teste = "\nINFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
-        def vv = sh (returnStdout:true, script: "echo teste")
+        def vv = sh (returnStdout:true, @script: "echo teste")
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
         //println(xc.find())
