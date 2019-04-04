@@ -19,7 +19,7 @@ node {
         echo "REGEX test"
         //println(xc.find())
         echo "REGEX test >"
-        def z = xc[0][0]
+        def z = xc [0][0]
         echo z
         //xc.each {println it[0]}
         echo "< REGEX test"
