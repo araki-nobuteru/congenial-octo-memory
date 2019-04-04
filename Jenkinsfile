@@ -9,7 +9,7 @@ node {
     a = load "git.groovy"
     def variable1 = "abc123"
     echo ">>>>>"
-    a.huh2()
+    a.huh2 ()
     
     script {
         def teste = "\nINFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
