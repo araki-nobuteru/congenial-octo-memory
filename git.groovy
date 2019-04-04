@@ -7,7 +7,7 @@ def greetings(String param1, String param2) {
 
 def huh(p1) {
     def teste = "INFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
-    def xc = (teste =~ /(?<=rei de roma )(.*)(?=\n)/)
+    def xc = (teste =~ /(?<='rei de roma ')(.*)(?='\n')/)
         
     stage("special") {
         echo p1
