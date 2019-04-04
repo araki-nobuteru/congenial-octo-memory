@@ -15,6 +15,7 @@ node {
         echo teste
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
+        println(xc.find())
         echo "REGEX test >"
         def z = xc[0][0]
         echo z
