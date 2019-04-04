@@ -12,6 +12,7 @@ def huh(p1) {
             def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
             echo "REGEX test"
             echo ("REGEX test > " + teste)
+            println(xc)
         }
         
         echo params.foobaz
