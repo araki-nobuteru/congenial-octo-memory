@@ -10,7 +10,8 @@ def huh(p1) {
         script {
             def teste = "INFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
             def xc = (teste =~ /(?<='rei de roma ')(.*)(?='\n')/)
-            echo xc[0]
+            echo "REGEX test"
+            echo xc
         }
         
         echo params.foobaz
