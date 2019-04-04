@@ -8,7 +8,7 @@ node {
     checkout scm
     a = load "git.groovy"
     def variable1 = "abc123"
-    //a.huh("1")
+    a.huh ("1")
     
     script {
         def teste = "\nINFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
