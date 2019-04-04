@@ -11,7 +11,8 @@ node {
     //a.huh("1")
     
     script {
-        def teste = "INFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
+        def teste = "\nINFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
+        echo teste
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
         echo "REGEX test >"
