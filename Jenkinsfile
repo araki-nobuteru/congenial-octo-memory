@@ -16,8 +16,8 @@ node {
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
         echo "REGEX test >"
-        def a = xc[0][0]
-        echo a
+        def z = xc[0][0]
+        echo z
         //xc.each {println it[0]}
         echo "< REGEX test"
     }
