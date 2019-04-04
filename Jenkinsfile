@@ -15,7 +15,7 @@ node {
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
         echo ("REGEX test > " + teste)
-        println(xc.lastmatch.toString())
+        xc.each {println it[0]}
     }
     
     dir("./vars") {
