@@ -12,7 +12,7 @@ def huh(p1) {
             def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
             echo "REGEX test"
             echo ("REGEX test > " + teste)
-            println(xc.find())
+            println(xc.class.toString())
         }
         
         echo params.foobaz
