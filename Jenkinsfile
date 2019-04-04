@@ -14,8 +14,9 @@ node {
         def teste = "INFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
         def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
         echo "REGEX test"
-        echo ("REGEX test > " + teste)
+        echo "REGEX test >"
         xc.each {println it[0]}
+        echo "< REGEX test"
     }
     
     dir("./vars") {
