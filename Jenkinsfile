@@ -8,8 +8,10 @@ node {
     checkout scm
     a = load "git.groovy"
     def variable1 = "abc123/"
-    def v2 = variable1
-    echo v2
+    def props = readJSON file: './teste.json'
+    echo props.foo
+    echo props.fooz[0]
+    echo props.bax
     echo ">>>>>"
     def currentResult = currentBuild.result ?: 'SUCCESS'
     echo currentResult
