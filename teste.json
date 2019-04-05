@@ -1,10 +1,10 @@
 {
     "foo": "baz from teste.json",
     "bax": {
-        "f1": 1230,
+        "f1": "1230 teste.json1",
         "f2": "234 from teste.json"
     },
     "fooz": [{
-        "zxcv": 1230
+        "zxcv": "1230 teste.json"
     }]
 }
