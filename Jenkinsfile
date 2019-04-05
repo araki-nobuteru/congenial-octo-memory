@@ -8,7 +8,7 @@ node {
     checkout scm
     a = load "git.groovy"
     def variable1 = "abc123/"
-    def v2 = variable1.encodeURL()
+    def v2 = variable1
     echo v2
     echo ">>>>>"
     def currentResult = currentBuild.result ?: 'SUCCESS'
