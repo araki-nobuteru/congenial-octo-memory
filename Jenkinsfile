@@ -10,7 +10,7 @@ node {
     def variable1 = "abc123/"
     def props = readJSON file: './teste.json'
     echo props.foo
-    echo props.fooz[0]
+    echo props.fooz[0].zxcv
     echo props.bax
     echo ">>>>>"
     def currentResult = currentBuild.result ?: 'SUCCESS'
