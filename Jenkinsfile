@@ -12,6 +12,7 @@ node {
     echo props.foo
     echo props.fooz[0].zxcv
     echo props.bax.f2
+    def qqq = "1".toInteger()
     echo ">>>>>"
     def currentResult = currentBuild.result ?: 'SUCCESS'
     echo currentResult
