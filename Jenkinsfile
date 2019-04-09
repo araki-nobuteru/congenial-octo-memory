@@ -1,6 +1,8 @@
 def t = ""
 def a
 node {
+    cleanWs deleteDirs: true
+    
     sh "git clone --bare https://github.com/araki-nobuteru/congenial-octo-memory.git"
     sh "git checkout develop"
     
