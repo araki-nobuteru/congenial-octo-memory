@@ -54,6 +54,6 @@ node {
         writeJSON(file: './teste.json', json: props)
         sh "git add teste.json"
         sh "git commit -am \"Bumping version number\""
-        sh "git push origin develop"
+        sh "git push --set-upstream origin develop"
     }
 }
