@@ -53,10 +53,10 @@ node {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
-            sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
+            //sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
             sh "git add teste.json"
             sh "git commit -m \"Bumping version number\""            
-            sh "git push origin develop"
+            sh "git push https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/"
         }
     }
 }
