@@ -52,8 +52,11 @@ node {
     stage("Updating package.json file") {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
-        sh "git add teste.json"
-        sh "git commit -m \"Bumping version number\""
-        sh "git push --set-upstream origin develop"
+        withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
+            sh "git add teste.json"
+            sh "git commit -m \"Bumping version number\""
+            sh "git remote set-url origin https://${}"
+            sh "git push --set-upstream origin develop"
+        }
     }
 }
