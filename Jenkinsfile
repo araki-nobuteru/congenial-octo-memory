@@ -1,7 +1,9 @@
 def t = ""
 def a
 node {
-    checkout scm
+    sh "git clone --bare https://github.com/araki-nobuteru/congenial-octo-memory.git"
+    sh "git checkout develop"
+    
     a = load "git.groovy"
     def variable1 = "abc123/"
     def props = readJSON file: './teste.json'
