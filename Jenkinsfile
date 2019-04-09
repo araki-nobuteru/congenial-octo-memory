@@ -3,7 +3,7 @@ def a
 node {
     cleanWs deleteDirs: true
     
-    git branch: develop, credentialsId: "araki-github", url: "https://github.com/araki-nobuteru/congenial-octo-memory.git"
+    git branch: "develop", credentialsId: "araki-github", url: "https://github.com/araki-nobuteru/congenial-octo-memory.git"
     sh "ls -l"
     
     a = load "git.groovy"
