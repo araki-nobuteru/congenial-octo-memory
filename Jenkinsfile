@@ -55,12 +55,10 @@ node {
         def user
         def pass
         withCredentials([usernamePassword(credentialsId:"testcred", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
-            //sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
-            user="${GITHUBUSER}"
-            pass="${GITHUBPASS}"
-        }
-        sh "git add teste.json"
-        sh "git commit -m \"Bumping version number\""            
-        sh "git push https://${user}:${pass}@github.com/araki-nobuteru/congenial-octo-memory.git/"
+            sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
+            sh "git add teste.json"
+            sh "git commit -m \"Bumping version number\""            
+            sh "git push https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/"
+        }        
     }
 }
