@@ -39,7 +39,7 @@ node {
             versionSuffixNumber += 1
         }
         
-        def updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
+        updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
         if (versionParts.size() > 1) {
             updatedVersion += ("-" + versionSuffix + "." + versionSuffixNumber)
         } else if (params.releaseType == "pre-release") {
