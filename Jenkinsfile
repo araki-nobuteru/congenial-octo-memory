@@ -14,6 +14,8 @@ node {
     
     echo ">>> Version number: " + props.version
     
+    def updatedVersion
+    
     def majorVersion = versionNumbers[0].toInteger()
     def minorVersion = versionNumbers[1].toInteger()
     def patchVersion = versionNumbers[2].toInteger()
@@ -45,5 +47,13 @@ node {
         }
         
         echo ">>> Updated version number: " + updatedVersion
+    }
+    
+    stage("Updating package.json file") {
+        props.version = updatedVersion
+        writeJSON(file: './teste.json', json: props)
+        sh "git add teste.json"
+        sh "git commit -m 'Bumping version number'"
+        sh "git push"
     }
 }
