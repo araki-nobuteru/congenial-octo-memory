@@ -35,7 +35,7 @@ node {
         
         def updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
         if (versionParts.size() > 1) {
-            updatedVersion += versionSuffix
+            updatedVersion += ("-" + versionSuffix)
         }
         
         echo ">>> Updated version number: " + updatedVersion
