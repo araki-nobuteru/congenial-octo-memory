@@ -53,7 +53,7 @@ node {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
         sh "git add teste.json"
-        sh "git commit -am \"Bumping version number\""
+        sh "git commit -m \"Bumping version number\""
         sh "git push --set-upstream origin develop"
     }
 }
