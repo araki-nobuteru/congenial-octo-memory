@@ -52,13 +52,13 @@ node {
     stage("Updating package.json file") {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
-        withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
+        withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
             sh "echo $githubUser"
             sh "git config --global user.email araki.nobuteru@gmail.com"
-            sh "git config --global user.name $githubUser"
+            sh "git config --global user.name $GITHUBUSER"
             sh "git add teste.json"
             sh "git commit -m \"Bumping version number\""
-            sh "git remote set-url origin https://$githubUser:$githubPass@github.com/araki-nobuteru/congenial-octo-memory.git/"
+            sh "git remote set-url origin https://$GITHUBUSER:$GITHUBPASS@github.com/araki-nobuteru/congenial-octo-memory.git/"
             sh "git push --set-upstream origin develop"
         }
     }
