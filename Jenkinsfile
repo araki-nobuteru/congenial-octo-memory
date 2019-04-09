@@ -14,9 +14,9 @@ node {
     
     echo ">>> Version number: " + versionParts[0]
     
-    def majorVersion = versionNumbers[0]
-    def minorVersion = versionNumbers[1]
-    def patchVersion = versionNumbers[2]
+    def majorVersion = versionNumbers[0].toInteger()
+    def minorVersion = versionNumbers[1].toInteger()
+    def patchVersion = versionNumbers[2].toInteger()
     
     def versionSuffix = null
     if (versionParts.size() > 1) {
@@ -26,11 +26,18 @@ node {
         
     stage("Bumping version number") {
         if(params.releaseType == "major") {
-            
+            majorVersion += 1
         } else if (params.releaseType == "minor") {
-            
+            minorVersion += 1
         } else {
-            
+            patchVersion += 1
         }
+        
+        def updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
+        if (versionParts.size() > 1) {
+            updatedVersion += versionSuffix
+        }
+        
+        echo ">>> Updated version number: " + updatedVersion
     }
 }
