@@ -51,7 +51,7 @@ node {
     
     stage("Updating package.json file") {
         props.version = updatedVersion
-        writeJSON(file: './teste.json', json: props)
+        writeJSON(file: './teste.json', json: props, pretty: 4)
         def user
         def pass
         withCredentials([usernamePassword(credentialsId:"testcred", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
