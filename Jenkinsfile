@@ -4,6 +4,7 @@ node {
     cleanWs deleteDirs: true
     
     sh "git clone --bare https://github.com/araki-nobuteru/congenial-octo-memory.git"
+    sh "ls -l"
     sh "git checkout develop"
     
     a = load "git.groovy"
