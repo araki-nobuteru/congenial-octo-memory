@@ -54,7 +54,7 @@ node {
         writeJSON(file: './teste.json', json: props)
         def user
         def pass
-        withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
+        withCredentials([usernamePassword(credentialsId:"testcred", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
             //sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
             user="${GITHUBUSER}"
             pass="${GITHUBPASS}"
