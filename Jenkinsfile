@@ -12,16 +12,18 @@ node {
     def versionParts = props.version.tokenize("-")
     def versionNumbers = versionParts[0].tokenize(".")
     
-    echo ">>> Version number: " + versionParts[0]
+    echo ">>> Version number: " + props.version
     
     def majorVersion = versionNumbers[0].toInteger()
     def minorVersion = versionNumbers[1].toInteger()
     def patchVersion = versionNumbers[2].toInteger()
     
     def versionSuffix = null
+    def versionSuffixNumber = null
     if (versionParts.size() > 1) {
-        versionSuffix = versionParts[1]
-        echo ">>> Version suffix: " + versionSuffix
+        def suffix = versionParts[1].tokenize(".")
+        versionSuffix = suffix[0]
+        versionSuffixNumber = suffix[1]
     }
         
     stage("Bumping version number") {
@@ -29,13 +31,15 @@ node {
             majorVersion += 1
         } else if (params.releaseType == "minor") {
             minorVersion += 1
-        } else {
+        } else if (params.releaseType == "patch") {
             patchVersion += 1
+        } else {
+            versionSuffixNumber += 1
         }
         
         def updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
         if (versionParts.size() > 1) {
-            updatedVersion += ("-" + versionSuffix)
+            updatedVersion += ("-" + versionSuffix + "." + versionSuffixNumber)
         }
         
         echo ">>> Updated version number: " + updatedVersion
