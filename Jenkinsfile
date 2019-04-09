@@ -19,7 +19,7 @@ node {
     def patchVersion = versionNumbers[2].toInteger()
     
     def versionSuffix = null
-    def versionSuffixNumber = null
+    def versionSuffixNumber = 0
     if (versionParts.size() > 1) {
         def suffix = versionParts[1].tokenize(".")
         versionSuffix = suffix[0]
@@ -40,6 +40,8 @@ node {
         def updatedVersion = majorVersion + "." + minorVersion + "." + patchVersion
         if (versionParts.size() > 1) {
             updatedVersion += ("-" + versionSuffix + "." + versionSuffixNumber)
+        } else if (params.releaseType == "patch") {
+            updatedVersion += ("-rc." + versionSuffixNumber)
         }
         
         echo ">>> Updated version number: " + updatedVersion
