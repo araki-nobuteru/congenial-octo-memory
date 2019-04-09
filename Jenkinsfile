@@ -54,6 +54,7 @@ node {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
+            echo $githubUser
             sh "git add teste.json"
             sh "git commit -am \"Bumping version number\""
             sh "git push https://$githubUser:$githubPass@github.com/araki-nobuteru/congenial-octo-memory.git/"
