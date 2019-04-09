@@ -55,7 +55,7 @@ node {
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
             sh "git add teste.json"
             sh "git commit -m \"Bumping version number\""
-            sh "git remote set-url origin https://${}"
+            sh "git remote set-url origin https://${githubUser}:${githubPass}@github.com/araki-nobuteru/congenial-octo-memory.git/"
             sh "git push --set-upstream origin develop"
         }
     }
