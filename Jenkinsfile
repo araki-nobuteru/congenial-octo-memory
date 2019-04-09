@@ -52,8 +52,10 @@ node {
     stage("Updating package.json file") {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
-        sh "git add teste.json"
-        sh "git commit -m 'Bumping version number'"
-        sh "git push"
+        withCredentials([usesrnamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
+            sh "git add teste.json"
+            sh "git commit -m \"Bumping version number\""
+            sh "git push https://${githubUser}:${githubPass}@github.com/araki-nobuteru/congenial-octo-memory.git"
+        }
     }
 }
