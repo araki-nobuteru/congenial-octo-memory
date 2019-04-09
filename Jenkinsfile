@@ -9,30 +9,30 @@ node {
     a = load "git.groovy"
     def variable1 = "abc123/"
     def props = readJSON file: './teste.json'
-    echo props.foo
-    echo props.fooz[0].zxcv
-    echo props.bax.f2
-    def qqq = "1".toInteger()
-    echo ">>>>>"
-    def currentResult = currentBuild.result ?: 'SUCCESS'
-    echo currentResult
+    def versionParts = props.version.tokenize("-")
+    def versionNumbers = versionParts[0].tokenize(".")
     
-    script {
-        def teste = "\nINFO: O rato roeu a roupa do rei de roma http://rato.roeu.roupa.rei.roma.com/ratofdp\nINFO: foobaz"
-        def vv = sh (returnStdout:true, script: "echo teste")
-        def xc = teste =~ (/(?<=rei de roma )(.*)(?=\n)/)
-        echo "REGEX test"
-        //println(xc.find())
-        echo "REGEX test >"
-        def z = xc [0][0]
-        echo z
-        //xc.each {println it[0]}
-        echo "< REGEX test"
+    echo ">>> Version number:"
+    echo versionParts[0]
+    
+    def majorVersion = versionNumbers[0]
+    def minorVersion = versionNumbers[1]
+    def patchVersion = versionNumbers[2]
+    
+    def versionSuffix = null
+    if (versionParts.size() > 1) {
+        versionSuffix = versionParts[1]
+        echo ">>> Version suffix:"
+        echo versionSuffix
     }
-    
-    dir("./vars") {
-        sh "ls -l"
-        def l = "${WORKSPACE}"
-        echo l
+        
+    stage("Bumping version number") {
+        if(params.releaseType == "major") {
+            
+        } else if (params.releaseType == "minor") {
+            
+        } else {
+            
+        }
     }
 }
