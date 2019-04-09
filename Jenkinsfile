@@ -6,6 +6,7 @@ node {
     sh "git clone https://github.com/araki-nobuteru/congenial-octo-memory.git ./"
     sh "ls -l"
     sh "git checkout develop"
+    sh "git pull"
     
     a = load "git.groovy"
     def variable1 = "abc123/"
