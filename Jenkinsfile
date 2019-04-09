@@ -54,7 +54,7 @@ node {
         writeJSON(file: './teste.json', json: props)
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
             sh "echo $githubUser"
-            sh "git remote set-url origin https://$GITHUBUSER:$GITHUBPASS@github.com/araki-nobuteru/congenial-octo-memory.git/"
+            //sh "git remote set-url origin https://$GITHUBUSER:$GITHUBPASS@github.com/araki-nobuteru/congenial-octo-memory.git/"
             sh "git config --global user.email araki.nobuteru@gmail.com"
             sh "git config --global user.name $GITHUBUSER"
             sh "git add teste.json"
