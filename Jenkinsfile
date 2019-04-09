@@ -23,7 +23,7 @@ node {
     if (versionParts.size() > 1) {
         def suffix = versionParts[1].tokenize(".")
         versionSuffix = suffix[0]
-        versionSuffixNumber = suffix[1]
+        versionSuffixNumber = suffix[1].toInteger()
     }
         
     stage("Bumping version number") {
