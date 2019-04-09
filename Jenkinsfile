@@ -12,8 +12,7 @@ node {
     def versionParts = props.version.tokenize("-")
     def versionNumbers = versionParts[0].tokenize(".")
     
-    echo ">>> Version number:"
-    echo versionParts[0]
+    echo ">>> Version number: " + versionParts[0]
     
     def majorVersion = versionNumbers[0]
     def minorVersion = versionNumbers[1]
@@ -22,8 +21,7 @@ node {
     def versionSuffix = null
     if (versionParts.size() > 1) {
         versionSuffix = versionParts[1]
-        echo ">>> Version suffix:"
-        echo versionSuffix
+        echo ">>> Version suffix: " + versionSuffix
     }
         
     stage("Bumping version number") {
