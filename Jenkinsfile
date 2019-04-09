@@ -3,7 +3,7 @@ def a
 node {
     cleanWs deleteDirs: true
     
-    sh "git clone --bare https://github.com/araki-nobuteru/congenial-octo-memory.git"
+    sh "git clone https://github.com/araki-nobuteru/congenial-octo-memory.git ./"
     sh "ls -l"
     sh "git checkout develop"
     
