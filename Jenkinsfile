@@ -56,8 +56,8 @@ node {
         def pass
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
             //sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
-            user=${GITHUBUSER}
-            pass=${GITHUBPASS}
+            user="${GITHUBUSER}"
+            pass="${GITHUBPASS}"
         }
         sh "git add teste.json"
         sh "git commit -m \"Bumping version number\""            
