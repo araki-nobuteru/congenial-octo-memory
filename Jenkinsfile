@@ -19,7 +19,7 @@ node {
     def patchVersion = versionNumbers[2].toInteger()
     
     def versionSuffix = null
-    def versionSuffixNumber = 0
+    def versionSuffixNumber = -1
     if (versionParts.size() > 1) {
         def suffix = versionParts[1].tokenize(".")
         versionSuffix = suffix[0]
