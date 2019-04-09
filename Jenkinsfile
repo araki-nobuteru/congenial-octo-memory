@@ -53,7 +53,7 @@ node {
         props.version = updatedVersion
         writeJSON(file: './teste.json', json: props)
         withCredentials([usernamePassword(credentialsId:"araki-github", usernameVariable:"githubUser", passwordVariable:"githubPass")]) {
-            sh "echo ${githubUser}"
+            sh "echo $githubUser"
             sh "git config --global user.email araki.nobuteru@gmail.com"
             sh "git config --global user.name $githubUser"
             sh "git add teste.json"
