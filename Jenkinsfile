@@ -1,9 +1,5 @@
 def t = ""
 def a
-
-
-
-
 node {
     checkout scm
     a = load "git.groovy"
