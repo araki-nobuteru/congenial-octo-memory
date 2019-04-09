@@ -1,4 +1,5 @@
 {
+    "version": "0.0.0",
     "foo": "baz from teste.json",
     "bax": {
         "f1": "1230 teste.json1",
