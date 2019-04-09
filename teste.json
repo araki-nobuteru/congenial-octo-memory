@@ -1,1 +1,9 @@
-{"version":"1.0.0","foo":"baz from teste.json","bax":{"f1":"1230 teste.json1","f2":"234 from teste.json"},"fooz":[{"zxcv":"1230 teste.json"}]}
+{
+    "version": "1.1.0",
+    "foo": "baz from teste.json",
+    "bax":     {
+        "f1": "1230 teste.json1",
+        "f2": "234 from teste.json"
+    },
+    "fooz": [{"zxcv": "1230 teste.json"}]
+}
