@@ -8,7 +8,7 @@ node {
     
     a = load "git.groovy"
     def variable1 = "abc123/"
-    def props = readJSON file: './teste.json'
+    def props = readJSON file: 'teste.json'
     def versionParts = props.version.tokenize("-")
     def versionNumbers = versionParts[0].tokenize(".")
     
@@ -51,7 +51,7 @@ node {
     
     stage("Updating package.json file") {
         props.version = updatedVersion
-        writeJSON(file: './teste.json', json: props, pretty: 4)
+        writeJSON(file: 'teste.json', json: props, pretty: 4)
         def user
         def pass
         withCredentials([usernamePassword(credentialsId:"testcred", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
