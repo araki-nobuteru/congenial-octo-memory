@@ -1,5 +1,5 @@
 {
-    "version": "2.2.0-rc.0",
+    "version": "3.2.0-rc.0",
     "foo": "baz from teste.json",
     "bax":     {
         "f1": "1230 teste.json1",
