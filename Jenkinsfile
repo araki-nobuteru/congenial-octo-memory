@@ -61,9 +61,10 @@ node {
             sh "git commit -m \"Bumping version number\""            
             sh "git push https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/"
             
-            GITHUBPASS = "asdf"
+            GITHUBPASS = "asdf$"
             s = "${GITHUBPASS}"
         }
+        s = java.net.URLEncoder.encode(s, "UTF-8")
         echo s
     }
 }
