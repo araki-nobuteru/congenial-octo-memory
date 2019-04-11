@@ -59,6 +59,8 @@ node {
             sh "git add teste.json"
             sh "git commit -m \"Bumping version number\""            
             sh "git push https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/"
+            def s = "${GITHUBPASS}"
+            echo s
         }        
     }
 }
