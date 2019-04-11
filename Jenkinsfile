@@ -54,13 +54,14 @@ node {
         writeJSON(file: 'teste.json', json: props, pretty: 4)
         def user
         def pass
+        def s
         withCredentials([usernamePassword(credentialsId:"testcred", usernameVariable:"GITHUBUSER", passwordVariable:"GITHUBPASS")]) {
             sh 'git remote set-url origin https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/'
             sh "git add teste.json"
             sh "git commit -m \"Bumping version number\""            
             sh "git push https://${GITHUBUSER}:${GITHUBPASS}@github.com/araki-nobuteru/congenial-octo-memory.git/"
-            def s = "${GITHUBPASS}"
-            echo s
-        }        
+            s = "${GITHUBPASS}"
+        }
+        echo s
     }
 }
