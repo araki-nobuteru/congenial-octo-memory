@@ -4,7 +4,7 @@ node {
         
         def resultsCsv = readCSV file: 'Summary.csv'
         for(i=0; i<resultsCsv.length; i++) {
-            sh "echo ${resultsCsv[i][0]}"
+            sh "echo ${resultsCsv[i]}"
         }
     }
 }
