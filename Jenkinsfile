@@ -21,7 +21,8 @@ node {
         if (coverage > threshold) {
             echo ">>> COVERAGE OK"
         } else {
-            echo ">>> COVEERAGE NOT OK"
+            echo ">>> COVERAGE NOT OK"
+            error message: "Failing due to low coverage"
         }
     }
 }
