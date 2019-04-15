@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.7.922.0">
+  <Summary numSequencePoints="6" visitedSequencePoints="5" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="83.33" branchCoverage="83.33" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="2" />
+  <Modules>
+    <Module hash="51-FC-66-EA-F4-73-DE-C4-9C-CA-EF-FC-5A-B4-88-DE-B7-4B-40-72">
+      <Summary numSequencePoints="6" visitedSequencePoints="5" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="83.33" branchCoverage="83.33" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="2" />
+      <ModulePath>E:\Users\ACC00827\freaklab\ClassLibrary1\UnitTestProject1\bin\Release\ClassLibrary1.dll</ModulePath>
+      <ModuleTime>2019-04-12T22:19:16.6880355Z</ModuleTime>
+      <ModuleName>ClassLibrary1</ModuleName>
+      <Files>
+        <File uid="1" fullPath="E:\Users\ACC00827\freaklab\ClassLibrary1\ClassLibrary1\Class1.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="6" visitedSequencePoints="5" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="83.33" branchCoverage="83.33" maxCyclomaticComplexity="3" minCyclomaticComplexity="1" maxCrapScore="3" minCrapScore="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="2" />
+          <FullName>ClassLibrary1.Class1</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="3" nPathComplexity="4" sequenceCoverage="100" branchCoverage="100" crapScore="3" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="5" visitedBranchPoints="5" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="3" minCyclomaticComplexity="3" maxCrapScore="3" minCrapScore="3" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663297</MetadataToken>
+              <Name>System.Int32 ClassLibrary1.Class1::Method01(System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="1" ordinal="0" offset="0" sl="13" sc="13" el="13" ec="23" bec="2" bev="2" fileid="1" />
+                <SequencePoint vc="1" uspid="2" ordinal="1" offset="4" sl="15" sc="17" el="15" ec="30" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="3" ordinal="2" offset="8" sl="17" sc="18" el="17" ec="29" bec="2" bev="2" fileid="1" />
+                <SequencePoint vc="1" uspid="4" ordinal="3" offset="11" sl="19" sc="17" el="19" ec="26" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="5" ordinal="4" offset="13" sl="23" sc="17" el="23" ec="30" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="6" ordinal="0" offset="2" sl="13" path="0" offsetend="4" fileid="1" />
+                <BranchPoint vc="2" uspid="7" ordinal="1" offset="2" sl="13" path="1" offsetend="8" fileid="1" />
+                <BranchPoint vc="1" uspid="8" ordinal="2" offset="9" sl="17" path="0" offsetend="11" fileid="1" />
+                <BranchPoint vc="1" uspid="9" ordinal="3" offset="9" sl="17" path="1" offsetend="13" fileid="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="3" uspid="1" ordinal="0" offset="0" sl="13" sc="13" el="13" ec="23" bec="2" bev="2" fileid="1" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="1" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken>100663298</MetadataToken>
+              <Name>System.Int32 ClassLibrary1.Class1::func01(System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="10" ordinal="0" offset="0" sl="29" sc="13" el="29" ec="22" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="0" uspid="10" ordinal="0" offset="0" sl="29" sc="13" el="29" ec="22" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>System.Void ClassLibrary1.Class1::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="11" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>
