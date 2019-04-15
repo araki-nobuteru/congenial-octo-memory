@@ -4,7 +4,7 @@
   Assemblies: 1
   Classes: 2
   Files: 3
-  Line coverage: 65.8%
+  Line coverage: 55.8%
   Covered lines: 24
   Uncovered lines: 19
   Coverable lines: 43
