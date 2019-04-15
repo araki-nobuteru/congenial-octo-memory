@@ -2,7 +2,7 @@ node {
     stage('Parse XML') {
         checkout scm
         
-        def threshold = params.threshold.toFloat()
+        def threshold = params.threshold.toInteger()
         
         def resultsCsv = readFile file: 'Summary.txt'
         
@@ -14,7 +14,7 @@ node {
         for (i=0; i<lines.length; i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
-                coverage = lines[i].split(":")[1].toFloat()
+                coverage = lines[i].split(":")[1].toInteger()
             }
         }
                 
