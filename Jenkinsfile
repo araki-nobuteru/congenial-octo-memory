@@ -3,8 +3,6 @@ node {
         checkout scm
         
         def resultsCsv = readCSV file: 'Summary.csv'
-        for(i=0; i<resultsCsv.length; i++) {
-            sh "echo ${resultsCsv[i]}"
-        }
+        echo resultsCsv
     }
 }
