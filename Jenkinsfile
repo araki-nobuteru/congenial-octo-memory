@@ -12,7 +12,7 @@ node {
         
         def coverage = 0
         for (i=0; i<lines.length; i++) {
-            if (lines[i].contains("Line coverage: ") {
+            if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
                 coverage = lines[i].split(":")[1].toFloat()
             }
