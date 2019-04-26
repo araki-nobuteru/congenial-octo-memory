@@ -41,7 +41,7 @@ node {
         }
         
         
-        if (coverage.toInteger() > threshold.toInteger()) {
+        if (coverage.trim().toInteger() > threshold.trim().toInteger()) {
             echo ">>> COVERAGE OK"
         } else {
             echo ">>> COVERAGE NOT OK"
