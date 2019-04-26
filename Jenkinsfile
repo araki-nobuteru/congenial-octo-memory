@@ -18,7 +18,7 @@ node {
                 echo c[0].trim().size().toString()
                 echo c[1].trim().size().toString()
 
-                def t = ts.tokenize('.')
+                def t = ts.replaceAll(',', '.').tokenize('.')
                 echo t[0]
                 echo t[1]
 
