@@ -45,7 +45,7 @@ node {
             echo ">>> COVERAGE OK"
         } else {
             echo ">>> COVERAGE NOT OK"
-            error message: "Failing due to low coverage"
+            currentBuild.result = 'UNSTABLE'
         }
     }
 }
