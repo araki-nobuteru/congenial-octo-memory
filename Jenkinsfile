@@ -15,8 +15,8 @@ node {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
                 def c = lines[i].tokenize(':')[1].replaceAll('%', '').replaceAll(' ', '').tokenize('.')
-                echo c[0].size().toString()
-                echo c[1].size().toString()
+                echo c[0].trim().size().toString()
+                echo c[1].trim().size().toString()
 
                 def t = ts.tokenize('.')
                 echo t[0]
