@@ -24,14 +24,14 @@ node {
 
                 def precision = t[1].trim().size()
                 
-                threshold = (t[0] + t[1])
-                coverage = (c[0] + c[1])
+                threshold = (t[0].trim() + t[1].trim())
+                coverage = (c[0].trim() + c[1].trim())
                 
                 if (c[1].trim().size() > precision) {
                     threshold += "0"*(c[1].trim().size() - precision)
                 }
                 if (c[1].trim().size() < precision) {
-                    coverage +="0"*(precision - c[1].trim().size())
+                    coverage += "0"*(precision - c[1].trim().size())
                 }
                 
                 echo ">>> PRECISION: ${precision}"
