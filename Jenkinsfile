@@ -2,8 +2,6 @@ node {
     stage('Parse XML') {
         checkout scm
         
-        def threshold = params.threshold.toDouble()
-        
         def resultsCsv = readFile file: 'Summary.txt'
         
         echo resultsCsv
@@ -14,11 +12,28 @@ node {
         for (i=0; i<lines.length; i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
-                coverage = lines[i].split(":")[1].replaceAll("%", "").toFloat()
+                def c = lines[i].split(":")[1].replaceAll("%", "").split(".")
+                
+                def t = params.threshold.replaceAll(",", ".").split(".")
+                def precision = t[1].length
+                
+                def threshold = (t[0] + t[1])
+                coverage = (c[0] + c[1])
+                
+                if (c[1].length >= precision) {
+                    threshold += "0"*(c[1].length - precision)
+                } else {
+                    coverage +="0"*(precision - c[1].length)
+                }
+                
+                echo ">>> PRECISION: ${precision}"
+                echo ">>> COVERAGE: ${coverage}"
+                echo ">>> THRESHOLD: ${threshold}"
             }
         }
-                
-        if (coverage > threshold) {
+        
+        
+        if (coverage.toInteger() > threshold.toInteger()) {
             echo ">>> COVERAGE OK"
         } else {
             echo ">>> COVERAGE NOT OK"
