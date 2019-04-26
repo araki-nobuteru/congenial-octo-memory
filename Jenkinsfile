@@ -2,7 +2,7 @@ node {
     stage('Parse XML') {
         checkout scm
         
-        def threshold = params.threshold.toFloat()
+        def threshold = Number(params.threshold)
         
         def resultsCsv = readFile file: 'Summary.txt'
         
