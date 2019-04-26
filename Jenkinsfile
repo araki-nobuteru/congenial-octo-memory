@@ -9,7 +9,8 @@ node {
         
         def lines = resultsCsv.split('\n')
         
-        def coverage = 0
+        def coverage = ""
+        def threshold = ""
         for (i=0; i<lines.size(); i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
@@ -20,7 +21,7 @@ node {
 
                 def precision = t[1].size()
                 
-                def threshold = (t[0] + t[1])
+                threshold = (t[0] + t[1])
                 coverage = (c[0] + c[1])
                 
                 if (c[1].size() >= precision) {
