@@ -2,6 +2,7 @@ node {
     stage('Parse XML') {
         checkout scm
         
+        def ts = params.threshold
         def resultsCsv = readFile file: 'Summary.txt'
         
         echo resultsCsv
@@ -12,10 +13,10 @@ node {
         for (i=0; i<lines.length; i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
-                def c = lines[i].split(':')[1].replaceAll('%', '').replaceAll(' ', '').split('.')
+                def c = lines[i].tokenize(':')[1].replaceAll('%', '').replaceAll(' ', '').tokenize('.')
                 echo c[0]
-                echo params.threshold.tokenize(".")[0]
-                def t = params.threshold.split('.')
+                echo ts.tokenize(".")[0]
+                def t = ts.tokenize('.')
 
                 def precision = t[1].length
                 
