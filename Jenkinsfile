@@ -16,8 +16,11 @@ node {
                 echo lines[i]
                 def c = lines[i].tokenize(':')[1].replaceAll('%', '').replaceAll(' ', '').tokenize('.')
                 echo c[0]
-                echo ts.tokenize(".")[0]
+                echo c[1]
+
                 def t = ts.tokenize('.')
+                echo t[0]
+                echo t[1]
 
                 def precision = t[1].size()
                 
