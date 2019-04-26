@@ -31,7 +31,7 @@ node {
                     threshold += "0"*(c[1].trim().size() - precision)
                 }
                 if (c[1].trim().size() < precision) {
-                    coverage +="0"*(precision - c[1].size().trim())
+                    coverage +="0"*(precision - c[1].trim().size())
                 }
                 
                 echo ">>> PRECISION: ${precision}"
