@@ -10,7 +10,7 @@ node {
         def lines = resultsCsv.split('\n')
         
         def coverage = 0
-        for (i=0; i<lines.length; i++) {
+        for (i=0; i<lines.size(); i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
                 def c = lines[i].tokenize(':')[1].replaceAll('%', '').replaceAll(' ', '').tokenize('.')
@@ -18,15 +18,15 @@ node {
                 echo ts.tokenize(".")[0]
                 def t = ts.tokenize('.')
 
-                def precision = t[1].length
+                def precision = t[1].size()
                 
                 def threshold = (t[0] + t[1])
                 coverage = (c[0] + c[1])
                 
-                if (c[1].length >= precision) {
-                    threshold += "0"*(c[1].length - precision)
+                if (c[1].size() >= precision) {
+                    threshold += "0"*(c[1].size() - precision)
                 } else {
-                    coverage +="0"*(precision - c[1].length)
+                    coverage +="0"*(precision - c[1].size())
                 }
                 
                 echo ">>> PRECISION: ${precision}"
