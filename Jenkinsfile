@@ -27,9 +27,10 @@ node {
                 threshold = (t[0] + t[1])
                 coverage = (c[0] + c[1])
                 
-                if (c[1].size() >= precision) {
+                if (c[1].size() > precision) {
                     threshold += "0"*(c[1].size() - precision)
-                } else {
+                }
+                if (c[1].size() < precision) {
                     coverage +="0"*(precision - c[1].size())
                 }
                 
