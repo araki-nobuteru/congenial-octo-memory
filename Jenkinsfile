@@ -14,7 +14,7 @@ node {
                 echo lines[i]
                 def c = lines[i].split(":")[1].replaceAll("%", "").split(".")
                 
-                def t = params.threshold.replaceAll(",", ".").split(".")
+                def t = params.threshold.split(".")
                 echo t[0]
                 def precision = t[1].length
                 
