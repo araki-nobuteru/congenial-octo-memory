@@ -12,7 +12,7 @@ node {
         for (i=0; i<lines.length; i++) {
             if (lines[i].contains("Line coverage: ")) {
                 echo lines[i]
-                def c = lines[i].split(':')[1].replaceAll('%', '').split('.')
+                def c = lines[i].split(':')[1].replaceAll('%', '').replaceAll(' ', '').split('.')
                 echo c[0]
                 echo params.threshold
                 def t = params.threshold.split('.')
